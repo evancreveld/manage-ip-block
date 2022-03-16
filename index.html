@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link href="subnetting-slider.css" rel="stylesheet" />
+
+    <title>Subneting Slider</title>
+    <link rel="icon" type="image/x-icon" href="/favicon.ico" />
+  </head>
+  <body>
+    <div class="container">
+      <!-- <div class="left">
+        <h1 class="head">Control</h1>
+        <biv class="button-container">
+          <button class="new-ip-btn">New IP and Mask</button>
+        </biv>
+      </div> -->
+      <div class="center">
+        <h1 class="head">Manage IP block</h1>
+        <div class="ip-container">
+          <div class="octet"><h3 class="octet-1">0</h3></div>
+          <h3>.</h3>
+          <div class="octet"><h3 class="octet-2">0</h3></div>
+          <h3>.</h3>
+          <div class="octet"><h3 class="octet-3">0</h3></div>
+          <h3>.</h3>
+          <div class="octet"><h3 class="octet-4">0</h3></div>
+          <div class="octet cidr-slash"><h3 class="octet-5">/</h3></div>
+          <div class="octet cidr-mask"><h3 class="octet-6">0</h3></div>
+        </div>
+        <div class="slider-container">
+          <input class="slider" type="range" min="0" max="32" />
+        </div>
+
+        <div class="binary-mask-container">
+          <h3 class="bit-1 bit-on">0</h3>
+          <h3 class="bit-2">0</h3>
+          <h3 class="bit-3">0</h3>
+          <h3 class="bit-4">0</h3>
+          <h3 class="bit-5">0</h3>
+          <h3 class="bit-6">0</h3>
+          <h3 class="bit-7">0</h3>
+          <h3 class="bit-8">0</h3>
+          <h3>.</h3>
+          <h3 class="bit-9">0</h3>
+          <h3 class="bit-10">0</h3>
+          <h3 class="bit-11">0</h3>
+          <h3 class="bit-12">0</h3>
+          <h3 class="bit-13">0</h3>
+          <h3 class="bit-14">0</h3>
+          <h3 class="bit-15">0</h3>
+          <h3 class="bit-16">0</h3>
+          <h3>.</h3>
+          <h3 class="bit-17">0</h3>
+          <h3 class="bit-18">0</h3>
+          <h3 class="bit-19">0</h3>
+          <h3 class="bit-20">0</h3>
+          <h3 class="bit-21">0</h3>
+          <h3 class="bit-22">0</h3>
+          <h3 class="bit-23">0</h3>
+          <h3 class="bit-24">0</h3>
+          <h3>.</h3>
+          <h3 class="bit-25">0</h3>
+          <h3 class="bit-26">0</h3>
+          <h3 class="bit-27">0</h3>
+          <h3 class="bit-28">0</h3>
+          <h3 class="bit-29">0</h3>
+          <h3 class="bit-30">0</h3>
+          <h3 class="bit-31">0</h3>
+          <h3 class="bit-32">0</h3>
+        </div>
+        <div class="numeric-mask-container">
+          <h2 class="mask-1">0</h2>
+          <h2>.</h2>
+          <h2 class="mask-2">0</h2>
+          <h2>.</h2>
+          <h2 class="mask-3">0</h2>
+          <h2>.</h2>
+          <h2 class="mask-4">0</h2>
+        </div>
+      </div>
+      <div class="right">
+        <h1 class="head_">Outcome</h1>
+        <div class="class-container">
+          <h4 class="ip-class">Class: A</h4>
+        </div>
+        <div class="subnet-id-container">
+          <h4 class="subnet-id">IP belongs to subnet:</h4>
+        </div>
+        <div class="ip-range-container">
+          <h4 class="ip-range">IP range in the subnet:</h4>
+        </div>
+        <div class="subnet-bits-container">
+          <h4></h4>
+        </div>
+        <div class="total-subnets-container">
+          <!-- <h4>Number of Subnetts:</h4> -->
+          <h4 class="total-subnets">1</h4>
+        </div>
+        <div class="total-ip-container">
+          <!-- <h4>Number of IP addreses:</h4> -->
+          <h4 class="total-ip">000000</h4>
+        </div>
+      </div>
+    </div>
+    <aside>
+      <div class="aside-tital-container">
+        <h5 class="aside-title">Subnetting made easy</h5>
+        <div class="p1-container">
+          <p clas="p1">
+            Every time you refresh this page, it generates a new IP address with
+            a classful subnet mask. The page displays the subnet mask using
+            three different representations.
+          </p>
+          <div class="list-container">
+            <ol class="list">
+              <li>
+                CIDR notation - the number of bits dedicated to the network
+                portion of the IP address appears with a slash separating it
+                from the IP address.
+              </li>
+              <li>
+                Binary representation - IPv4 address and subnet masks are both
+                32 bits long. The binary subnet mask exhibits the bits used for
+                the network portion of the IP address as '1's and the bits
+                remaining for the host portion of the address as '0's.
+              </li>
+              <li>
+                Dotted decimal notation - commonly found while configuring or
+                displaying IP information of a networking interface card. The
+                decimal notation is easier to work with than a binary mask.
+              </li>
+            </ol>
+          </div>
+          <p class="p2">
+            CIDR, binary, and decimal are all the same when the subnet mask is
+            concerned. Networking devices use the subnet mask to identify the
+            subnet (the group of IPs) to which a specific IP address belongs.
+          </p>
+          <p class="p3">
+            Use the slider to modify the subnet mask and explore the result.
+          </p>
+          <p class="p4">
+            Moving the slider to the right of the IP class boundary creates
+            subnetworks. The more bits you add to the mask, the more subnets you
+            make, each with less IP address in it.
+          </p>
+          <p class="p5">
+            Moving the slider to the left of the IP class boundary creates
+            supernetworks, also known as aggregated IP blocks. Routers use
+            supernetworks for more efficient routing.
+          </p>
+        </div>
+      </div>
+      <div class="links">
+        <p>
+          Click
+          <a
+            class="bin-trainer"
+            href="https://eldadvc.github.io/convert-to-binary/"
+            target="_blank"
+            >here</a
+          >
+          to practice Decimal to Binary conversion.
+        </p>
+        <p>
+          Click
+          <a
+            class="bin-trainer"
+            href="https://eldadvc.github.io/Subnetting-Trainer/"
+            target="_blank"
+            >here</a
+          >
+          to practice Subnetting.
+        </p>
+      </div>
+    </aside>
+
+    <script src="subnetting-slider.js"></script>
+  </body>
+</html>
